@@ -3,9 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ESLint-Webpack</title>
+    <title>Form Validation</title>
   <script defer src="main.js"></script></head>
   <body>
-    <h1>ESLint-Webpack</h1>
+    <form class="sign-up-form" novalidate>
+      <div>
+        <label for="email">Email*</label>
+        <input type="email" name="email" id="email" required />
+        <span class="invalid email-invalid"></span>
+      </div>
+      <div>
+        <label for="country">Country*</label>
+        <input type="text" name="country" id="country" required />
+        <span class="invalid country-invalid"></span>
+      </div>
+      <div>
+        <label for="zip-code">Zip Code*</label>
+        <input type="number" name="zip-code" id="zip-code" pattern="(^\d{5})(-\d{4})?$" required />
+        <span class="invalid zip-code-invalid"></span>
+      </div>
+      <div>
+        <label for="password">Password*</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          minlength="8"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*"
+          required
+        />
+        <span class="invalid password-invalid"></span>
+      </div>
+      <div>
+        <label for="password-confirm">Password Confirm*</label>
+        <input type="password" name="password-confirm" id="password-confirm" required />
+        <span class="invalid password-confirm-invalid"></span>
+      </div>
+      <button class="sign-up-btn">Sign Up</button>
+    </form>
+    <p class="success hidden">High five!🙌</p>
   </body>
 </html>

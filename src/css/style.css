@@ -1,0 +1,15 @@
+.invalid {
+  color: red;
+}
+
+.invalid-bd {
+  border: 1px solid red;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.input-bd:invalid {
+  border: 1px solid red;
+}
